@@ -1,6 +1,6 @@
 import express from "express";
 import authRoutes from "../router/authRoute.js";
-
+import postRoutes from "../router/postRoute.js";
 const app = express();
 
 // Parse incoming JSON requests
@@ -16,6 +16,7 @@ app.get("/", (req, res) => {
 
 // Authentication routes
 app.use("/api/auth", authRoutes);
+app.use("/api/posts", postRoutes);
 
 // Handle unknown routes
 app.use((req, res) => {
